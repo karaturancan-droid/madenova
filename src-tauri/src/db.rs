@@ -260,6 +260,14 @@ fn migration_1_initial_schema(conn: &Connection) -> rusqlite::Result<()> {
             file_name TEXT,
             imported_at TEXT NOT NULL
         );
+
+        CREATE TABLE IF NOT EXISTS asistan_messages (
+            id TEXT PRIMARY KEY,
+            role TEXT NOT NULL,
+            content TEXT NOT NULL,
+            timestamp TEXT NOT NULL,
+            suggested_action TEXT
+        );
         "#,
     )
 }

@@ -1,17 +1,19 @@
 ﻿'use client';
 
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
+import { ChatWindow } from '@/components/asistan/chat-window';
+import { useAsistan } from '@/hooks/use-asistan';
 
 export default function AsistanPage() {
+  const { messages, isLoading, error, sendMessage } = useAsistan();
+
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>Asistan</CardTitle>
-        <CardDescription>Bu modül yakında burada olacak.</CardDescription>
-      </CardHeader>
-      <CardContent>
-        {/* Placeholder content */}
-      </CardContent>
-    </Card>
+    <div className="h-full">
+      <ChatWindow
+        messages={messages}
+        isLoading={isLoading}
+        onSendMessage={sendMessage}
+        error={error}
+      />
+    </div>
   );
 }

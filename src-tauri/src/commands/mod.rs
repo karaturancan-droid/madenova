@@ -10,3 +10,4 @@ pub mod notifications;
 pub mod invoices;
 pub mod settings;
 pub mod backup;
+pub mod asistan;

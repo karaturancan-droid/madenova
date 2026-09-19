@@ -3,6 +3,7 @@ mod db;
 mod helpers;
 mod models;
 
+use commands::asistan::{asistan_get_history, asistan_mesaj_gonder};
 use commands::backup::{export_backup, import_backup};
 use commands::companies::{create_company, delete_company, get_company, list_companies, update_company};
 use commands::documents::{
@@ -160,6 +161,9 @@ pub fn run() {
             // backup
             export_backup,
             import_backup,
+            // asistan
+            asistan_get_history,
+            asistan_mesaj_gonder,
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
