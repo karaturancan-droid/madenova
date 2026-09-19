@@ -14,7 +14,30 @@ export function Sidebar({ onNavigate }: SidebarProps) {
 
   return (
     <div className="flex h-full w-64 flex-col border-r border-border bg-background">
-      <div className="p-4">
+      <div className="p-4 pb-0">
+        <Link
+          href="/cari"
+          onClick={onNavigate}
+          className="flex items-center gap-2.5 rounded-lg border border-border p-3"
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/logo.png"
+            alt="Madenova logosu"
+            className="h-9 w-9 shrink-0 rounded-md"
+          />
+          <div className="min-w-0">
+            <p className="truncate text-sm font-semibold leading-tight">
+              Madenova
+            </p>
+            <p className="mt-0.5 truncate text-xs text-muted-foreground">
+              İşletme Yönetimi
+            </p>
+          </div>
+        </Link>
+      </div>
+
+      <div className="p-4 pb-2">
         <div className="rounded-lg border border-border p-3">
           <p className="text-sm font-medium leading-tight">İşletme Adı</p>
           <p className="mt-0.5 text-xs text-muted-foreground">
