@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "strictness": "strict",
+    "allow": [
+      "Bash(cargo tauri --version 2>&1)",
+      "Bash(echo $env:CARGO_HOME; echo $env:USERPROFILE; echo $env:LOCALAPPDATA; echo $env:PNPM_HOME)"
+    ]
+  }
+}
